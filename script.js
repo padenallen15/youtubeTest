@@ -10,8 +10,8 @@ var artist = "";
 var formSubmitHandler = function (event) {  
     event.preventDefault();
 
-    var song = songSearchEl.value.trim();
-    var artist = artistSearchEl.value.trim();
+    song = songSearchEl.value.trim();
+    artist = artistSearchEl.value.trim();
 
     if (song, artist) {
         console.log(song, artist);
@@ -55,7 +55,7 @@ var displayLyrics = function (data) {
         // YOUTUBE
         var YoutubeApi = "AIzaSyDmjBtZUutKjG2725gC5lcGoV_jzDwbR7o";
         console.log("Youtube " + song, artist);
-        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=kane brown heaven&type=video&    videoCaption=closedCaption&key=" + YoutubeApi)
+        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" + song + " " + artist + "&type=video&videoCaption=closedCaption&key=" + YoutubeApi)
 
         .then(function (response) {  
             if (response.ok) {
